@@ -25,12 +25,7 @@ private:
 
 struct FileEntry
 {
-	//FileEntry(std::string dir, std::string name):FileDirectory(dir),FileName(name)
-	//{
-	//	
-	//}
-	//std::string FileDirectory;
-	//std::string FileName;
+
 	std::string m_Directory;
 	std::string m_Name;
 	std::string m_Pack;

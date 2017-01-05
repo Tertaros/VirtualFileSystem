@@ -1,18 +1,12 @@
 #pragma once
 #include "File.h"
 #include <string>
-#ifdef _WIN32
-#include "Windows.h"
-#endif
-#ifdef __linux__
-#endif
 
-
-class PhysicalFile: public File
+class PhysicalFile_Linux:public File
 {
 public:
-	PhysicalFile(const std::string & file_path);
-	virtual ~PhysicalFile();
+	PhysicalFile_Linux(const std::string & file_path);
+	~PhysicalFile_Linux();
 
 	virtual bool Open(FileMode mode) override;
 	virtual size_t Read(uint8_t * buffer, size_t size) override;
@@ -20,9 +14,9 @@ public:
 	virtual void Close() override;
 	virtual size_t GetByteIndex() override;
 	virtual void SetByteIndex(const size_t index)override;
-private :
-	HANDLE m_Handle;
+private:
+	//HANDLE m_Handle;
+	int m_FileDescriptor;
 	std::string m_Path;
-
 };
 
